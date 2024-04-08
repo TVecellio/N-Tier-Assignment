@@ -1,7 +1,7 @@
+using Domain.IItemRepository;
+using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using RazorCrudUI.Models;
-using RazorRepoUI.Data;
 using System.Collections;
 
 namespace RazorCrudUI.Pages

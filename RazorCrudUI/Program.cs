@@ -1,6 +1,7 @@
+using Domain.IItemRepository;
 using Microsoft.EntityFrameworkCore;
-using RazorCrudUI.Data;
-using RazorRepoUI.Data;
+using NTier.Data;
+
 
 var builder = WebApplication.CreateBuilder(args);
 

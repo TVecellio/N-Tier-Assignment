@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace RazorCrudUI.Models;
+namespace Domain.Models;
     public class ItemModel
     {
     public int Id { get; set; }

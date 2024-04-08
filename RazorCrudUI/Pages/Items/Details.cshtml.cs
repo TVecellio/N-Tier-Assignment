@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Domain.IItemRepository;
+using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using RazorCrudUI.Data;
-using RazorCrudUI.Models;
-using RazorRepoUI.Data;
+
 
 namespace RazorCrudUI.Pages.Items
 {

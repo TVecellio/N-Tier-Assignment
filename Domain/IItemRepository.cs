@@ -1,7 +1,6 @@
-﻿using NuGet.Configuration;
-using RazorCrudUI.Models;
+﻿using Domain.Models;
 
-namespace RazorRepoUI.Data
+namespace Domain.IItemRepository
 {
     public interface IItemRepository
     {

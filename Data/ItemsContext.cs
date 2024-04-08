@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RazorCrudUI.Models;
+using Domain.Models;
 
-namespace RazorCrudUI.Data
+namespace NTier.Data
 {
     public class ItemsContext : DbContext
     { 
