@@ -13,7 +13,7 @@ builder.Services.AddDbContext<ItemsContext>(options =>
 //database is connected
 
 
-builder.Services.AddScoped<IItemRepository, ItemRepositoryEF>();
+builder.Services.AddSingleton<IItemRepository, ItemRepositoryEF>();
 var app = builder.Build();
 
 
