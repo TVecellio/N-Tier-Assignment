@@ -15,5 +15,7 @@ namespace Domain.Models;
     [Column(TypeName = "decimal(18, 2)")]
     [DataType(DataType.Currency)]
     public decimal Price { get; set; }
+
+   public string? PictureURL { get; set; }
 }
 

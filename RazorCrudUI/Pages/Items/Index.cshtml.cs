@@ -14,6 +14,7 @@ namespace RazorCrudUI.Pages.Items
     public class IndexModel : PageModel
     {
         private readonly IItemRepository  _repo;
+        
 
         public IndexModel(IItemRepository repo)
         {
