@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Domain.Models;
 using Domain.IItemRepository;
+using Microsoft.IdentityModel.Tokens;
 
 namespace NTier.Data
 {
@@ -43,9 +44,9 @@ namespace NTier.Data
 
             string name = _context.Items.FirstOrDefault(item => item.Id == id).Name;
 
-            if (name != null)
+            if (!name.IsNullOrEmpty())
             {
-                _context.Remove(id);
+                _context.Remove(_context.Items.FirstOrDefault(item => item.Id == id));
                 _context.SaveChanges();
                 return name;
             } else {
