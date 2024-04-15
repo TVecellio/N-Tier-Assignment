@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using UI.Utilities;
 
 
@@ -52,7 +53,7 @@ namespace RazorCrudUI.Pages.Items
                 return Page();
             }
 
-            if (HttpContext.Request.Form.Files.Count > 0)
+            if (!HttpContext.Request.Form.Files.IsNullOrEmpty())
             {
                 FileHelper.DeleteOldImage(_env, ItemModel);
                 ItemModel.PictureURL = FileHelper.UploadNewImage(_env, HttpContext.Request.Form.Files[0]);
