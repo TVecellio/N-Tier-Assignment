@@ -32,13 +32,11 @@
                 <div class="col-4">
                     @if(string.IsNullOrEmpty(Model.Item.PictureURL))
                     {
-                        <img src="~/images/PlaceHolder.png" class="card-img"/>
+                        <img src="~/images/PlaceHolder.png"/>
                     }else
                     {
-                        <img src="~/@Model.Item.PictureURL" class="card.img" />
+                        <img src="~/@Model.Item.PictureURL"/>
                     }
-                    
-                         class="card-img" />
                 </div>
             </div>
         </div>

@@ -32,7 +32,14 @@
                             </div>
 
                             <div class="card-body">
-                                <img src="~/images/PlaceHolder.png" class="card-img" />
+                                @if (string.IsNullOrEmpty(item.PictureURL))
+                                {
+                                    <img src="~/images/PlaceHolder.png" />
+                                }
+                                else
+                                {
+                                    <img src="~/@item.PictureURL" />
+                                }
                             </div>
 
                             <div class="card-body">
