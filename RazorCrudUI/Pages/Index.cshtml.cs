@@ -2,7 +2,7 @@ using Domain.IItemRepository;
 using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Collections;
+using System.Collections.Generic;
 
 namespace RazorCrudUI.Pages
 {
@@ -14,10 +14,24 @@ namespace RazorCrudUI.Pages
         {
             _repo = repo;
         }
-        public  IList<ItemModel> ItemModel { get; set; } = default!;
+
+
+        [BindProperty(SupportsGet = true)]
+        public string SearchTerm { get; set; }
+
+        [BindProperty]
+        public IList<ItemModel> ItemModel { get; set; } = new List<ItemModel>();
+
         public void OnGet()
         {
-            ItemModel = (IList<ItemModel>)_repo.GetItems();
+            if (!string.IsNullOrEmpty(SearchTerm))
+            {
+                ItemModel = (IList<ItemModel>)_repo.GetItems(SearchTerm);
+            }
+            else
+            {
+                ItemModel = (IList<ItemModel>)_repo.GetItems();
+            }
         }
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Domain.Models;
 using Domain.IItemRepository;
+using UI.Utilities;
 
 
 namespace RazorCrudUI.Pages.Items
@@ -10,15 +11,19 @@ namespace RazorCrudUI.Pages.Items
     {
         private readonly IItemRepository _repo;
 
-        public CreateModel(IItemRepository repo)
+        private readonly IWebHostEnvironment _env;
+
+        public CreateModel(IItemRepository repo, IWebHostEnvironment env)
         {
             _repo = repo;
+            _env = env;
         }
 
         public IActionResult OnGet()
         {
             return Page();
         }
+       
 
         [BindProperty]
         public ItemModel ItemModel { get; set; } = default!;
@@ -29,6 +34,10 @@ namespace RazorCrudUI.Pages.Items
             if (!ModelState.IsValid)
             {
                 return Page();
+            }
+            if(HttpContext.Request.Form.Files.Count > 0)
+            {
+                ItemModel.PictureURL = FileHelper.UploadNewImage(_env, HttpContext.Request.Form.Files[0]);
             }
 
             _repo.insertItem(ItemModel);
