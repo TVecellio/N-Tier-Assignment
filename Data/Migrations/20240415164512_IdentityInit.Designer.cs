@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NTier.Data;
 
@@ -11,9 +12,11 @@ using NTier.Data;
 namespace RazorCrudUI.Migrations
 {
     [DbContext(typeof(ItemsContext))]
-    partial class ItemsContextModelSnapshot : ModelSnapshot
+    [Migration("20240415164512_IdentityInit")]
+    partial class IdentityInit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -32,7 +32,8 @@
 
             <div class="form-group">
                 <label asp-for="ItemModel.PictureURL" class="control-label"></label>
-                <input type="file" asp-for="ItemModel.PictureURL" class="form-control" />
+                <input type="file" name="ThisIsNotInTheItemModel" class="form-control" />
+                <input type="hidden" asp-for="ItemModel.PictureURL" />
                 <span asp-validation-for="ItemModel.PictureURL" class="text-danger"></span>
             </div>
 

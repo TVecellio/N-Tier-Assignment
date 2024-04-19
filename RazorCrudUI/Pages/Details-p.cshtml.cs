@@ -1,10 +1,12 @@
 using Domain.IItemRepository;
 using Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace UI.Pages
 {
+    [Authorize]
     public class Details_pModel : PageModel
     {
         private readonly IItemRepository _repo;
